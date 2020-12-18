@@ -63,16 +63,14 @@ elif [[ -n "$UNITY_SERIAL" && -n "$UNITY_EMAIL" && -n "$UNITY_PASSWORD" ]]; then
   # Set the license file path
 #   FILE_PATH=../temp-project-path
   
-#   mkdir -p $FILE_PATH
-#   cd $FILE_PATH
-  
-#   UNITY_PROJECT_PATH="$GITHUB_WORKSPACE/$PROJECT_PATH"
-#   echo "Using project path \"$UNITY_PROJECT_PATH\"."
+  UNITY_PROJECT_PATH="$GITHUB_WORKSPACE/$PROJECT_PATH"
+  echo "Using project path \"$UNITY_PROJECT_PATH\"."
 
   # Activate license
   unity-editor \
     -nographics \
-    -projectPath "?" \
+    -projectPath "$UNITY_PROJECT_PATH" \
+    -buildTarget "$BUILD_TARGET" \
     -logFile /dev/stdout \
     -quit \
     -serial "$UNITY_SERIAL" \
