@@ -59,10 +59,15 @@ elif [[ -n "$UNITY_SERIAL" && -n "$UNITY_EMAIL" && -n "$UNITY_PASSWORD" ]]; then
   # Note: This is the preferred way for PROFESSIONAL LICENSES.
   #
   echo "Requesting activation (professional license)"
+  
+  # Set the license file path
+  FILE_PATH=../temp-project
 
   # Activate license
   unity-editor \
+    -batchmode \
     -nographics \
+    -createProject $FILE_PATH \
     -logFile /dev/stdout \
     -quit \
     -serial "$UNITY_SERIAL" \
