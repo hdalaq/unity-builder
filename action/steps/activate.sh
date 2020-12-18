@@ -62,7 +62,6 @@ elif [[ -n "$UNITY_SERIAL" && -n "$UNITY_EMAIL" && -n "$UNITY_PASSWORD" ]]; then
 
   # Activate license
   unity-editor \
-    -batchmode \
     -nographics \
     -logFile /dev/stdout \
     -quit \
