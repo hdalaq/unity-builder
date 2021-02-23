@@ -69,7 +69,6 @@ elif [[ -n "$UNITY_SERIAL" && -n "$UNITY_EMAIL" && -n "$UNITY_PASSWORD" ]]; then
   # Activate license
   unity-editor \
     -nographics \
-    -projectPath "$UNITY_PROJECT_PATH" \
     -buildTarget "$BUILD_TARGET" \
     -logFile /dev/stdout \
     -quit \
