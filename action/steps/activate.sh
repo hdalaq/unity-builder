@@ -61,9 +61,10 @@ elif [[ -n "$UNITY_SERIAL" && -n "$UNITY_EMAIL" && -n "$UNITY_PASSWORD" ]]; then
   echo "Requesting activation (professional license)"
   
   # Set the license file path
-  FILE_PATH=../temp-project-path
+  FILE_PATH=./temp-project-path
   mkdir -p $FILE_PATH
-  #cd $FILE_PATH
+  cd $FILE_PATH
+  echo $(pwd)
 
   # Activate license
   unity-editor \
