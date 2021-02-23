@@ -64,12 +64,11 @@ elif [[ -n "$UNITY_SERIAL" && -n "$UNITY_EMAIL" && -n "$UNITY_PASSWORD" ]]; then
   FILE_PATH=./temp-project-path
   mkdir -p $FILE_PATH
   cd $FILE_PATH
-  echo $(pwd)
+  echo "Current path is: $(pwd)"
 
   # Activate license
   unity-editor \
     -nographics \
-    -projectPath $FILE_PATH \
     -logFile /dev/stdout \
     -quit \
     -serial "$UNITY_SERIAL" \
