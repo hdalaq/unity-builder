@@ -70,11 +70,14 @@ elif [[ -n "$UNITY_SERIAL" && -n "$UNITY_EMAIL" && -n "$UNITY_PASSWORD" ]]; then
   unity-editor \
     -nographics \
     -logFile /dev/stdout \
+    -noUpm \
     -quit \
     -serial "$UNITY_SERIAL" \
     -username "$UNITY_EMAIL" \
     -password "$UNITY_PASSWORD"
 
+  echo $(ls)
+  
   # Store the exit code from the verify command
   UNITY_EXIT_CODE=$?
 
