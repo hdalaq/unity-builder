@@ -59,12 +59,18 @@ elif [[ -n "$UNITY_SERIAL" && -n "$UNITY_EMAIL" && -n "$UNITY_PASSWORD" ]]; then
   # Note: This is the preferred way for PROFESSIONAL LICENSES.
   #
   echo "Requesting activation (professional license)"
+  
+  # The empty directory prevents Unity from automatically opening and importing the project if it's in the root of the repo.
+  FILE_PATH=./empty-project-path
+  mkdir -p $FILE_PATH
+  cd $FILE_PATH
+  echo "Current path is: $(pwd)"
 
   # Activate license
   unity-editor \
-    -batchmode \
     -nographics \
     -logFile /dev/stdout \
+    -noUpm \
     -quit \
     -serial "$UNITY_SERIAL" \
     -username "$UNITY_EMAIL" \
